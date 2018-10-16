@@ -25,7 +25,7 @@ class ListTable extends React.Component {
 
   render() {
     // Check if correct data prop is passed, otherwise render empty.
-    if (this.props.data === null || this.props.data.length === 0 || this.props.data.constructor !== Array) {
+    if (this.props.data === null || !Array.isArray(this.props.data) || this.props.data.length === 0) {
       return <React.Fragment/>;
     }
 
