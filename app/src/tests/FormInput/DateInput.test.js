@@ -31,7 +31,7 @@ describe('DateInput unit test', () => {
 });
 
 describe('DateInput functional test', () => {
-  let wrapper = mount(
+  const wrapper = mount(
       <DateInput
         id="Id"
         label="Label"

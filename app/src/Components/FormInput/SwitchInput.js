@@ -15,7 +15,7 @@ const SwitchInput = ({
   ...props
 }) => {
   return (
-    <FormControl style={{width: '250px', margin: '15px'}} error={!!error}>
+    <FormControl style={{ width: '250px', margin: '15px' }} error={!!error}>
       <FormControlLabel
         control={
           <React.Fragment>

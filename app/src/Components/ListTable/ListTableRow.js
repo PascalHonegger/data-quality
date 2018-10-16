@@ -13,7 +13,7 @@ import { ListTableRowContent } from './ListTableRowContent';
  *
  * Container calls for TableDataRowButtons and TableDataRowData container components
  */
-export const ListTableRow = ({rowData, rowColumns, buttons}) => {
+export const ListTableRow = ({ rowData, rowColumns, buttons }) => {
   return(
     <TableRow>
       <ListTableRowContent rowData={rowData} rowColumns={rowColumns}/>

@@ -1,13 +1,13 @@
 import React from 'react'
 import { shallowWrap, mountWrap } from './../../setupTests'
 
-import {ListTableRow} from './../../Components/ListTable/ListTableRow'
+import { ListTableRow } from './../../Components/ListTable/ListTableRow'
 
 describe('ListTableRow unit test', () => {
   let wrapper;
-  let buttons = [{'name': 'button name', 'function': 'edit', 'parameter': '/test-route'}];
-  let rowData = {id: 1, name: 'mock name', trueField: true, falseField: false};
-  let rowColumns = ['id', 'name', 'trueField', 'falseField'];
+  const buttons = [{ 'name': 'button name', 'function': 'edit', 'parameter': '/test-route' }];
+  const rowData = { id: 1, name: 'mock name', trueField: true, falseField: false };
+  const rowColumns = ['id', 'name', 'trueField', 'falseField'];
 
   beforeEach(() => {
     wrapper = shallowWrap(<ListTableRow buttons={buttons} rowData={rowData} rowColumns={rowColumns}/>)
@@ -25,10 +25,10 @@ describe('ListTableRow unit test', () => {
 
 describe('ListTableRow functional test', () => {
   it ('renders table row correctly, including boolean field (True/False icons', () => {
-    let buttons = [{'name': 'button name', 'function': 'edit', 'parameter': '/test-route'}];
-    let rowData = {id: 1, name: 'mock name', trueField: true, falseField: false};
-    let rowColumns = ['id', 'name', 'trueField', 'falseField'];
-    let wrapper = mountWrap(<table><tbody><ListTableRow rowData={rowData} rowColumns={rowColumns} buttons={buttons}/></tbody></table>);
+    const buttons = [{ 'name': 'button name', 'function': 'edit', 'parameter': '/test-route' }];
+    const rowData = { id: 1, name: 'mock name', trueField: true, falseField: false };
+    const rowColumns = ['id', 'name', 'trueField', 'falseField'];
+    const wrapper = mountWrap(<table><tbody><ListTableRow rowData={rowData} rowColumns={rowColumns} buttons={buttons}/></tbody></table>);
     expect(wrapper.find('ListTableRowButtons').exists()).toBe(true);
     expect(wrapper.find('EditIcon').exists()).toBe(true);
     expect(wrapper.find('tr')).toHaveLength(1);
@@ -39,10 +39,10 @@ describe('ListTableRow functional test', () => {
     expect(wrapper.find('ClearIcon').exists()).toEqual(true);
   });
   it ('renders empty table row correctly', () => {
-    let buttons = [];
-    let rowData = {};
-    let rowColumns = [];
-    let wrapper = mountWrap(<table><tbody><ListTableRow rowData={rowData} rowColumns={rowColumns} buttons={buttons}/></tbody></table>);
+    const buttons = [];
+    const rowData = {};
+    const rowColumns = [];
+    const wrapper = mountWrap(<table><tbody><ListTableRow rowData={rowData} rowColumns={rowColumns} buttons={buttons}/></tbody></table>);
     expect(wrapper.text()).toEqual('');
   });
 });

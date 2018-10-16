@@ -27,7 +27,7 @@ const IndicatorGroupFormFields = props => {
           value={values.name}
           onChange={handleChange}
           onBlur={handleBlur}
-          style={{float: 'left'}}
+          style={{ float: 'left' }}
         />
       </div>
       <div>
@@ -46,14 +46,14 @@ const formikEnhancer = withFormik({
   }),
   mapPropsToValues: (props) => (
       props.initialFieldValues === null
-    ? {name: ''}
-    : {name: props.initialFieldValues.name}
+    ? { name: '' }
+    : { name: props.initialFieldValues.name }
   ),
   handleSubmit: (payload, { props, setSubmitting }) => {
     setSubmitting(false);
     let variables;
     if (props.initialFieldValues === null) {
-        variables = { indicatorGroup: payload};
+        variables = { indicatorGroup: payload };
     } else {
         variables = { indicatorGroupPatch: payload, id: props.initialFieldValues.id };
     }

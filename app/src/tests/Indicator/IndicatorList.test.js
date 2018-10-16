@@ -7,9 +7,9 @@ import IndicatorList from '../../Components/Indicator/IndicatorList';
 
 describe('IndicatorList unit test', () => {
   let wrapper;
-  let query = IndicatorRepository.getListPage(1, 10);
+  const query = IndicatorRepository.getListPage(1, 10);
 
-  let mocks = [
+  const mocks = [
   {
     request: {
       query: query

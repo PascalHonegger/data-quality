@@ -14,13 +14,13 @@ const DataSourceList = (refetch) => (
       if (error) return <p>Error :(</p>;
       return (
         <div>
-          <div style={{float: 'left', marginLeft: '60px'}}>
+          <div style={{ float: 'left', marginLeft: '60px' }}>
             Data Sources
           </div>
-          <div style={{float: 'right'}}>
+          <div style={{ float: 'right' }}>
             <RouterButton targetLocation='/data-source/new' disabled={false} label="Create" variant='contained'/>
           </div>
-          <ListTable data={data.allDataSources.nodes}  buttons={[{'name': 'edit', 'function': 'edit', 'parameter': '/data-source'}, {'name': 'delete', 'parameter': 'DataSourceRepository'}]}/>
+          <ListTable data={data.allDataSources.nodes}  buttons={[{ 'name': 'edit', 'function': 'edit', 'parameter': '/data-source' }, { 'name': 'delete', 'parameter': 'DataSourceRepository' }]}/>
         </div>
       );
     }}

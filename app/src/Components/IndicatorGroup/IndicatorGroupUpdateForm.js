@@ -1,13 +1,13 @@
-import {Query} from 'react-apollo';
+import { Query } from 'react-apollo';
 import React from 'react';
 
 import IndicatorGroupRepository from '../../repository/IndicatorGroupRepository';
 import NotFoundComponent from '../Error/NotFoundComponent';
-import {BaseForm} from '../Base/Form';
+import { BaseForm } from '../Base/Form';
 import EnhancedIndicatorGroupForm from './IndicatorGroupForm';
 
-export const IndicatorGroupUpdateForm = ({...props}) => (
-  <Query query={IndicatorGroupRepository.display()} variables={{id: props.match.params.id}}>
+export const IndicatorGroupUpdateForm = ({ ...props }) => (
+  <Query query={IndicatorGroupRepository.display()} variables={{ id: props.match.params.id }}>
     {({ loading, error, data }) => {
       if (IndicatorGroupRepository.display === undefined) {
         throw new TypeError('Repository must implement update function.')

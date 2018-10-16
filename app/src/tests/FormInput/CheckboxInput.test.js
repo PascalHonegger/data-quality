@@ -31,7 +31,7 @@ describe('CheckboxInput unit test', () => {
 });
 
 describe('CheckboxInput functional test', () => {
-  let wrapper = mount(
+  const wrapper = mount(
       <CheckboxInput
         id="Id"
         label="Label"

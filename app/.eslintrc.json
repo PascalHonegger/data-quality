@@ -3,7 +3,9 @@
   "plugins": [ "react", "jest" ],
   "rules": {
     "react/prop-types": "off",
-    "quotes": ["error", "single"]
+    "quotes": ["error", "single"],
+    "prefer-const": "error",
+    "object-curly-spacing": ["error", "always"]
   },
   "env": {
     "browser": true,

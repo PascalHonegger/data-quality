@@ -1,6 +1,6 @@
 import React from 'react';
-import {styles} from '../../styles/baseStyles';
-import {withStyles} from '@material-ui/core/styles';
+import { styles } from '../../styles/baseStyles';
+import { withStyles } from '@material-ui/core/styles';
 import TableBody from '@material-ui/core/TableBody';
 import { ListTableRow } from './ListTableRow';
 
@@ -14,7 +14,7 @@ import { ListTableRow } from './ListTableRow';
  * Component calls DataTableRow container component
  */
 
-export const ListTableBody = ({content, contentColumnList, buttons}) => {
+export const ListTableBody = ({ content, contentColumnList, buttons }) => {
   return (
     <TableBody>
       {

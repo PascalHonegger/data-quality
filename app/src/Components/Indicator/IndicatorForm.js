@@ -124,16 +124,16 @@ const formikEnhancer = withFormik({
 
   mapPropsToValues: (props) => (
     props.initialFieldValues === null
-      ? {name: '', description: '', executionOrder: 0, indicatorTypeId: 0, indicatorGroupId: 0, flagActive: false}
-      : {name: props.initialFieldValues.name, description: props.initialFieldValues.description,
+      ? { name: '', description: '', executionOrder: 0, indicatorTypeId: 0, indicatorGroupId: 0, flagActive: false }
+      : { name: props.initialFieldValues.name, description: props.initialFieldValues.description,
         executionOrder: props.initialFieldValues.executionOrder, indicatorTypeId: props.initialFieldValues.indicatorTypeId,
-        indicatorGroupId: props.initialFieldValues.indicatorGroupId, flagActive: props.initialFieldValues.flagActive}
+        indicatorGroupId: props.initialFieldValues.indicatorGroupId, flagActive: props.initialFieldValues.flagActive }
   ),
   handleSubmit: (payload, { props, setSubmitting }) => {
     setSubmitting(false);
     let variables;
     if (props.initialFieldValues === null) {
-        variables = { indicator: payload};
+        variables = { indicator: payload };
     } else {
         variables = { indicatorPatch: payload, id: props.initialFieldValues.id };
     }

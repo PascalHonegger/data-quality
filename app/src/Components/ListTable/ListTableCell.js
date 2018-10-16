@@ -9,7 +9,7 @@ import TableCell from '@material-ui/core/TableCell';
  *
  */
 
-export const ListTableCell = ({contents}) => {
+export const ListTableCell = ({ contents }) => {
   return (
     <TableCell>{contents}</TableCell>
   );

@@ -14,13 +14,13 @@ const IndicatorGroupList = (refetch) => (
       if (error) return <p>Error :(</p>;
       return (
         <div>
-          <div style={{float: 'left', marginLeft: '60px'}}>
+          <div style={{ float: 'left', marginLeft: '60px' }}>
             Indicator Groups
           </div>
-          <div style={{float: 'right'}}>
+          <div style={{ float: 'right' }}>
             <RouterButton targetLocation='/indicator-group/new' disabled={false} label="Create" variant='contained'/>
           </div>
-          <ListTable data={data.allIndicatorGroups.nodes} buttons={[{'name': 'edit', 'function': 'edit', 'parameter': '/indicator-group'}, {'name': 'delete', 'parameter': 'IndicatorGroupRepository'}]}/>
+          <ListTable data={data.allIndicatorGroups.nodes} buttons={[{ 'name': 'edit', 'function': 'edit', 'parameter': '/indicator-group' }, { 'name': 'delete', 'parameter': 'IndicatorGroupRepository' }]}/>
         </div>
       );
     }}

@@ -29,8 +29,8 @@ class ListTable extends React.Component {
       return (<React.Fragment/>);
     }
 
-    let headerNames = this._buildTableFieldNames();
-    let content =  this.props.data;
+    const headerNames = this._buildTableFieldNames();
+    const content =  this.props.data;
     return (
       <Table>
         <ListTableHeader headerNames={headerNames}/>

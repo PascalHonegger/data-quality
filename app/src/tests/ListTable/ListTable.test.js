@@ -5,9 +5,9 @@ import ListTable from '../../Components/ListTable/ListTable';
 
 describe('List Table unit test', () => {
   let wrapper;
-  let buttons = [{'name': 'button name', 'function': 'edit', 'parameter': '/test-route'}];
-  let data = [{id: 1, name: 'mock name', trueField: true, falseField: false, __typename: 'Mock Type'},
-              {id: 2, name: 'mock name 2', trueField: false, falseField: false, __typename: 'Mock Type'}];
+  const buttons = [{ 'name': 'button name', 'function': 'edit', 'parameter': '/test-route' }];
+  const data = [{ id: 1, name: 'mock name', trueField: true, falseField: false, __typename: 'Mock Type' },
+              { id: 2, name: 'mock name 2', trueField: false, falseField: false, __typename: 'Mock Type' }];
   beforeEach(() => {
     wrapper = shallowWrap(<ListTable buttons={buttons} data={data}/>)
   });
@@ -24,10 +24,10 @@ describe('List Table unit test', () => {
 
 describe('ListTable functional test', () => {
   it ('renders table correctly, including boolean fields (True/False icons', () => {
-    let buttons = [{'name': 'button name', 'function': 'edit', 'parameter': '/test-route'}];
-    let data = [{id: 1, name: 'mock name', trueField: true, falseField: false, __typename: 'Mock Type'},
-                {id: 2, name: 'mock name 2', trueField: false, falseField: false, __typename: 'Mock Type'}];
-    let wrapper = mountWrap(<ListTable buttons={buttons} data={data}/>);
+    const buttons = [{ 'name': 'button name', 'function': 'edit', 'parameter': '/test-route' }];
+    const data = [{ id: 1, name: 'mock name', trueField: true, falseField: false, __typename: 'Mock Type' },
+                { id: 2, name: 'mock name 2', trueField: false, falseField: false, __typename: 'Mock Type' }];
+    const wrapper = mountWrap(<ListTable buttons={buttons} data={data}/>);
     expect(wrapper.find('ListTableRowButtons').exists()).toBe(true);
     expect(wrapper.find('ListTableRowButtons')).toHaveLength(2);
     expect(wrapper.find('EditIcon').exists()).toBe(true);
@@ -49,9 +49,9 @@ describe('ListTable functional test', () => {
     expect(wrapper.find('ClearIcon')).toHaveLength(3);
   });
   it ('renders empty table body correctly', () => {
-    let buttons = [];
-    let data = [];
-    let wrapper = mountWrap(<ListTable buttons={buttons} data={data}/>);
+    const buttons = [];
+    const data = [];
+    const wrapper = mountWrap(<ListTable buttons={buttons} data={data}/>);
     expect(wrapper.text()).toEqual(null);
   });
 });

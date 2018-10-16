@@ -5,7 +5,7 @@ import ListTableHeader from './../../Components/ListTable/ListTableHeader'
 
 describe('ListTableHeader unit test', () => {
   let wrapper;
-  let headerNames = ['id', 'name', 'longName', ''];
+  const headerNames = ['id', 'name', 'longName', ''];
 
   beforeEach(() => {
     wrapper = shallow(<ListTableHeader headerNames={headerNames}/>)
@@ -22,8 +22,8 @@ describe('ListTableHeader unit test', () => {
 
 describe('ListTableHeader functional test', () => {
   it ('renders properly capitalizes the names and renders the action column', () => {
-    let headerNames = ['id', 'name', 'longName', ''];
-    let wrapper = mount(<table><ListTableHeader headerNames={headerNames}/></table>);
+    const headerNames = ['id', 'name', 'longName', ''];
+    const wrapper = mount(<table><ListTableHeader headerNames={headerNames}/></table>);
     expect(wrapper.find('tr')).toHaveLength(1);
     expect(wrapper.find('th')).toHaveLength(5);
     expect(wrapper.find('th').at(0).text()).toEqual('Id');
@@ -33,8 +33,8 @@ describe('ListTableHeader functional test', () => {
     expect(wrapper.find('th').at(4).text()).toEqual('Actions');
   });
   it ('renders correctly with no headers', () => {
-    let headerNames = [];
-    let wrapper = mount(<table><ListTableHeader headerNames={headerNames}/></table>);
+    const headerNames = [];
+    const wrapper = mount(<table><ListTableHeader headerNames={headerNames}/></table>);
     expect(wrapper.find('tr')).toHaveLength(1);
     expect(wrapper.find('th')).toHaveLength(1);
     expect(wrapper.find('th').at(0).text()).toEqual('Actions');

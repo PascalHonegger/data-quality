@@ -11,7 +11,7 @@ import ListTableCell from './ListTableCell';
  *
  * Calls a SimpleButton component to render each button
  */
-export const ListTableRowContent = ({rowData, rowColumns}) => {
+export const ListTableRowContent = ({ rowData, rowColumns }) => {
   return rowColumns.map(function(column) {
     return (<ListTableCell key={rowData.id + '_' + column} contents={_buildCell(rowData[column])}/>)
   }, rowData);

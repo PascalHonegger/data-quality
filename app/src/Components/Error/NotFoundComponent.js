@@ -1,6 +1,6 @@
 import React from 'react';
-import {styles} from './../../styles/baseStyles';
-import {withStyles} from '@material-ui/core/styles';
+import { styles } from './../../styles/baseStyles';
+import { withStyles } from '@material-ui/core/styles';
 
 class NotFoundComponent extends React.Component {
 

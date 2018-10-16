@@ -20,7 +20,7 @@ describe('ListTable unit test', () => {
 
 describe('ListTable functional test', () => {
   it ('renders correct contents', () => {
-    let wrapper = mount(<table><tbody><tr><ListTableCell contents='mock contents'/></tr></tbody></table>);
+    const wrapper = mount(<table><tbody><tr><ListTableCell contents='mock contents'/></tr></tbody></table>);
     expect(wrapper.text()).toEqual('mock contents')
   });
 });

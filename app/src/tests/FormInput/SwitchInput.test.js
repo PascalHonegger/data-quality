@@ -29,7 +29,7 @@ describe('SwitchInput unit test', () => {
 });
 
 describe('SwitchInput functional test', () => {
-  let wrapper = mount(
+  const wrapper = mount(
       <SwitchInput
         id="Id"
         label="Label"

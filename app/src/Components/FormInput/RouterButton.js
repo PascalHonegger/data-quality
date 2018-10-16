@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import SimpleButton from './SimpleButton'
 
-const RouterButton = withRouter(({history, targetLocation, disabled, label, variant}) => (
+const RouterButton = withRouter(({ history, targetLocation, disabled, label, variant }) => (
   <SimpleButton
       type={targetLocation === 'back' ? 'cancel' : 'create'}
       disabled={disabled}

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
-import {ListTableCell} from './ListTableCell';
+import { ListTableCell } from './ListTableCell';
 
 /**
  * Container component for TableRow Action Buttons
@@ -15,7 +15,7 @@ import {ListTableCell} from './ListTableCell';
  *
  * Calls a Button component to render each button
  */
-export const ListTableRowButtons = ({buttons, value}) => {
+export const ListTableRowButtons = ({ buttons, value }) => {
 
   return (
     <ListTableCell

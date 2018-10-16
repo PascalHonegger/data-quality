@@ -1,7 +1,7 @@
 import React from 'react';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import {ListTableCell} from './ListTableCell';
+import { ListTableCell } from './ListTableCell';
 
 /**
  * Component to build the list table header.
@@ -37,7 +37,7 @@ class ListTableHeader extends React.Component {
 
   render() {
     //make a deep copy to not modify the props data
-    let headerFields = this.props.headerNames.slice(0);
+    const headerFields = this.props.headerNames.slice(0);
     return (this._buildHeader(headerFields));
   }
 }

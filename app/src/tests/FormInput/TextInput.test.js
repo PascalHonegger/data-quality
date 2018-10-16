@@ -31,7 +31,7 @@ describe('TextInput unit test', () => {
 });
 
 describe('TextInput functional test', () => {
-  let wrapper = mount(
+  const wrapper = mount(
       <TextInput
         id="Id"
         label="Label"
@@ -48,11 +48,11 @@ describe('TextInput functional test', () => {
     expect(wrapper.prop('value')).toEqual('mock text')
   });
   it ('renders correct contents using setProps', () => {
-    wrapper.setProps({value: 'new mock content'})
+    wrapper.setProps({ value: 'new mock content' })
     expect(wrapper.prop('value')).toEqual('new mock content')
   });
   it ('renders correct numeric contents', () => {
-    wrapper.setProps({numeric: true, value: '123321'});
+    wrapper.setProps({ numeric: true, value: '123321' });
     expect(wrapper.prop('value')).toEqual('123321');
   });
 });

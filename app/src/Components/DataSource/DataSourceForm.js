@@ -29,7 +29,7 @@ const DataSourceFormFields = props => {
           value={values.name}
           onChange={handleChange}
           onBlur={handleBlur}
-          style={{float: 'left'}}
+          style={{ float: 'left' }}
         />
       <div>
       <div>
@@ -68,7 +68,7 @@ const DataSourceFormFields = props => {
           value={values.login}
           onChange={handleChange}
           onBlur={handleBlur}
-          style={{float: 'left'}}
+          style={{ float: 'left' }}
         />
       <div>
       </div>
@@ -105,16 +105,16 @@ const formikEnhancer = withFormik({
 
   mapPropsToValues: (props) => (
     props.initialFieldValues === null
-      ? {name: '', connectionString: '', dataSourceTypeId: '', login: '', password: ''}
-      : {name: props.initialFieldValues.name, connectionString: props.initialFieldValues.connectionString,
+      ? { name: '', connectionString: '', dataSourceTypeId: '', login: '', password: '' }
+      : { name: props.initialFieldValues.name, connectionString: props.initialFieldValues.connectionString,
           dataSourceTypeId: props.initialFieldValues.dataSourceTypeId,
-          login: props.initialFieldValues.login, password: props.initialFieldValues.password}
+          login: props.initialFieldValues.login, password: props.initialFieldValues.password }
   ),
   handleSubmit: (payload, { props, setSubmitting }) => {
     setSubmitting(false);
     let variables;
     if (props.initialFieldValues === null) {
-        variables = { dataSource: payload};
+        variables = { dataSource: payload };
     } else {
         variables = { dataSourcePatch: payload, id: props.initialFieldValues.id };
     }
