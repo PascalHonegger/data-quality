@@ -16,21 +16,21 @@ import ListTableBody from './ListTableBody';
  * Calls on TableHeader and DataTableBody components
  */
 class ListTable extends React.Component {
-  _buildTableFieldNames() {
-    var tableFieldNames = Object.keys(this.props.data[0]);
-    //remove redundant element __typename
+  static _buildTableFieldNames() {
+    const tableFieldNames = Object.keys(this.props.data[0]);
+    // Remove redundant element __typename
     tableFieldNames.pop();
-    return tableFieldNames
+    return tableFieldNames;
   }
 
   render() {
-    //check if correct data prop is passed, otherwise render empty.
+    // Check if correct data prop is passed, otherwise render empty.
     if (this.props.data === null || this.props.data.length === 0 || this.props.data.constructor !== Array) {
-      return (<React.Fragment/>);
+      return <React.Fragment/>;
     }
 
-    const headerNames = this._buildTableFieldNames();
-    const content =  this.props.data;
+    const headerNames = ListTable._buildTableFieldNames();
+    const content = this.props.data;
     return (
       <Table>
         <ListTableHeader headerNames={headerNames}/>
@@ -43,9 +43,9 @@ class ListTable extends React.Component {
 export default withStyles(styles)(ListTable);
 
 ListTable.propTypes = {
-  data: PropTypes.array.isRequired,
+  'data': PropTypes.array.isRequired
 };
 
 ListTable.defaultProps = {
-  buttons: [],
+  'buttons': []
 };

@@ -10,7 +10,7 @@ describe('SelectInput unit test', () => {
       <SelectInput
         id="Id"
         label="Label"
-        items={[{ id: 1, name: 'select value 1' }, { id: 2, name: 'select value 2' }]}
+        items={[{ 'id': 1, 'name': 'select value 1' }, { 'id': 2, 'name': 'select value 2' }]}
         helperText="Helper Text"
         placeholder="Select indicator type"
         touched="true"
@@ -33,19 +33,19 @@ describe('SelectInput unit test', () => {
 
 describe('SelectInput functional test', () => {
   const wrapper = mount(
-      <SelectInput
-        id="Id"
-        label="Label"
-        items={[{ id: 1, name: 'select value 1' }, { id: 2, name: 'select value 2' }]}
-        placeholder="Select indicator type"
-        touched="true"
-        error=""
-        value={1}
-        onChange={jest.fn()}
-        onBlur={jest.fn()}
-      />
-    );
-  it ('renders correct contents', () => {
-    expect(wrapper.prop('value')).toEqual(1)
+    <SelectInput
+      id="Id"
+      label="Label"
+      items={[{ 'id': 1, 'name': 'select value 1' }, { 'id': 2, 'name': 'select value 2' }]}
+      placeholder="Select indicator type"
+      touched="true"
+      error=""
+      value={1}
+      onChange={jest.fn()}
+      onBlur={jest.fn()}
+    />
+  );
+  it('renders correct contents', () => {
+    expect(wrapper.prop('value')).toEqual(1);
   });
 });

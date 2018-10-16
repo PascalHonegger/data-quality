@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { shallow } from 'enzyme';
 
 import RouterButton from '../../Components/FormInput/RouterButton';
@@ -8,9 +8,9 @@ describe('RouterButton unit test', () => {
   beforeEach(() => {
     wrapper = shallow(
       <RouterButton
-        history=''
-        targetLocation='/'
-        label='test button'
+        history=""
+        targetLocation="/"
+        label="test button"
         disabled={false}
       />
     );
@@ -24,29 +24,32 @@ describe('RouterButton unit test', () => {
     expect(wrapper).toMatchSnapshot();
   });
 });
-// todo fix react router tests
-//describe('TextInput functional test', () => {
-//  let context = {};
-//  let history = {};
-//  let wrapper;
-//  beforeEach(() => {
-//    wrapper = mount(
-//      <MemoryRouter initialEntries={[ '/random' ]}>
-//        <RouterButton
-//          history=''
-//          targetLocation='back'
-//          label='test button'
-//          disabled={true}
-//        />
-//      </MemoryRouter>
-//    );
-//  });
-//
-//  it('renders', () => {
-//    expect(wrapper.length).toEqual(1);
-//  });
-//
-//  it('matches snapshot', () => {
-//    expect(wrapper).toMatchSnapshot();
-//  });
-//});
+
+/*
+ * Todo fix react router tests
+ *describe('TextInput functional test', () => {
+ *  let context = {};
+ *  let history = {};
+ *  let wrapper;
+ *  beforeEach(() => {
+ *    wrapper = mount(
+ *      <MemoryRouter initialEntries={[ '/random' ]}>
+ *        <RouterButton
+ *          history=''
+ *          targetLocation='back'
+ *          label='test button'
+ *          disabled={true}
+ *        />
+ *      </MemoryRouter>
+ *    );
+ *  });
+ *
+ *  it('renders', () => {
+ *    expect(wrapper.length).toEqual(1);
+ *  });
+ *
+ *  it('matches snapshot', () => {
+ *    expect(wrapper).toMatchSnapshot();
+ *  });
+ *});
+ */

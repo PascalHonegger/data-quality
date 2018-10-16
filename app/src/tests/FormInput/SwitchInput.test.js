@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { shallow, mount } from 'enzyme';
 
 import SwitchInput from '../../Components/FormInput/SwitchInput';
@@ -30,16 +30,16 @@ describe('SwitchInput unit test', () => {
 
 describe('SwitchInput functional test', () => {
   const wrapper = mount(
-      <SwitchInput
-        id="Id"
-        label="Label"
-        touched="true"
-        error=""
-        value="true"
-        onChange={jest.fn()}
-        onBlur={jest.fn()}
-      />
-    );
+    <SwitchInput
+      id="Id"
+      label="Label"
+      touched="true"
+      error=""
+      value="true"
+      onChange={jest.fn()}
+      onBlur={jest.fn()}
+    />
+  );
 
   it('renders correct contents', () => {
     expect(wrapper.prop('value')).toEqual('true');

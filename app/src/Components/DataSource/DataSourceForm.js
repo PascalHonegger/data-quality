@@ -5,7 +5,7 @@ import TextInput from './../FormInput/TextInput';
 import SelectInput from './../FormInput/SelectInput';
 import SimpleButton from './../FormInput/SimpleButton';
 
-const DataSourceFormFields = props => {
+const DataSourceFormFields = (props) => {
   const {
     data,
     values,
@@ -14,10 +14,10 @@ const DataSourceFormFields = props => {
     handleChange,
     handleBlur,
     handleSubmit,
-    isSubmitting,
+    isSubmitting
   } = props;
   return (
-    <form onSubmit={handleSubmit} style={{ marginLeft: '60px' }}>
+    <form onSubmit={handleSubmit} style={{ 'marginLeft': '60px' }}>
       <div>
         <TextInput
           id="name"
@@ -29,22 +29,22 @@ const DataSourceFormFields = props => {
           value={values.name}
           onChange={handleChange}
           onBlur={handleBlur}
-          style={{ float: 'left' }}
+          style={{ 'float': 'left' }}
         />
-      <div>
-      <div>
-        <SelectInput
-          id="dataSourceTypeId"
-          label="Type"
-          items={data.allDataSourceTypes.nodes}
-          touched={touched.dataSourceTypeId}
-          error={touched.dataSourceTypeId && errors.dataSourceTypeId}
-          value={values.dataSourceTypeId}
-          onChange={handleChange}
-          onBlur={handleBlur}
-        />
-      </div>
-      </div>
+        <div>
+          <div>
+            <SelectInput
+              id="dataSourceTypeId"
+              label="Type"
+              items={data.allDataSourceTypes.nodes}
+              touched={touched.dataSourceTypeId}
+              error={touched.dataSourceTypeId && errors.dataSourceTypeId}
+              value={values.dataSourceTypeId}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </div>
+        </div>
         <TextInput
           id="connectionString"
           label="Connection string"
@@ -68,10 +68,10 @@ const DataSourceFormFields = props => {
           value={values.login}
           onChange={handleChange}
           onBlur={handleBlur}
-          style={{ float: 'left' }}
+          style={{ 'float': 'left' }}
         />
-      <div>
-      </div>
+        <div>
+        </div>
         <TextInput
           id="password"
           label="Password"
@@ -86,7 +86,7 @@ const DataSourceFormFields = props => {
       </div>
       <div>
         <div>
-          <SimpleButton type="submit" disabled={isSubmitting} label='Submit' variant='contained'/> &nbsp;
+          <SimpleButton type="submit" disabled={isSubmitting} label="Submit" variant="contained"/> &nbsp;
         </div>
       </div>
     </form>
@@ -94,35 +94,35 @@ const DataSourceFormFields = props => {
 };
 
 const formikEnhancer = withFormik({
-  validationSchema: Yup.object().shape({
-    name: Yup.string()
-      .required('Name cannot be blank'),
-    connectionString: Yup.string()
-      .required('Connection string cannot be blank'),
-    login: Yup.string()
-      .required('Login cannot be blank')
+  'validationSchema': Yup.object().shape({
+    'name': Yup.string().
+      required('Name cannot be blank'),
+    'connectionString': Yup.string().
+      required('Connection string cannot be blank'),
+    'login': Yup.string().
+      required('Login cannot be blank')
   }),
 
-  mapPropsToValues: (props) => (
-    props.initialFieldValues === null
-      ? { name: '', connectionString: '', dataSourceTypeId: '', login: '', password: '' }
-      : { name: props.initialFieldValues.name, connectionString: props.initialFieldValues.connectionString,
-          dataSourceTypeId: props.initialFieldValues.dataSourceTypeId,
-          login: props.initialFieldValues.login, password: props.initialFieldValues.password }
-  ),
-  handleSubmit: (payload, { props, setSubmitting }) => {
+  'mapPropsToValues': (props) => props.initialFieldValues === null
+    ? { 'name': '', 'connectionString': '', 'dataSourceTypeId': '', 'login': '', 'password': '' }
+    : { 'name': props.initialFieldValues.name,
+      'connectionString': props.initialFieldValues.connectionString,
+      'dataSourceTypeId': props.initialFieldValues.dataSourceTypeId,
+      'login': props.initialFieldValues.login,
+      'password': props.initialFieldValues.password },
+  'handleSubmit': (payload, { props, setSubmitting }) => {
     setSubmitting(false);
     let variables;
     if (props.initialFieldValues === null) {
-        variables = { dataSource: payload };
+      variables = { 'dataSource': payload };
     } else {
-        variables = { dataSourcePatch: payload, id: props.initialFieldValues.id };
+      variables = { 'dataSourcePatch': payload, 'id': props.initialFieldValues.id };
     }
     props.mutate({
-      variables: variables
+      variables
     });
   },
-  displayName: 'DataSourceForm',
+  'displayName': 'DataSourceForm'
 });
 
 

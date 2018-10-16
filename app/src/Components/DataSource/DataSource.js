@@ -17,18 +17,18 @@ class DataSource extends React.Component {
     return (
       <React.Fragment>
         <div className={classes.appBarSpacer} />
-        <Typography variant='display1' gutterBottom className={classes.chartContainer}>
+        <Typography variant="display1" gutterBottom className={classes.chartContainer}>
           <Route
             path={`${match.url}/new`}
             component={
-              (props) => ( <BaseForm ComponentRepository={DataSourceRepository} FormComponent={EnhancedDataSourceForm}
-                  afterSaveRoute='/data-source/' title='Create Data Source' initialFieldValues={null} {...props} /> )
+              (props) => <BaseForm ComponentRepository={DataSourceRepository} FormComponent={EnhancedDataSourceForm}
+                afterSaveRoute="/data-source/" title="Create Data Source" initialFieldValues={null} {...props} />
             }
           />
           <Route
             path={`${match.url}/edit/:id`}
             component={
-              (props) => ( <DataSourceUpdateForm {...props} /> )
+              (props) => <DataSourceUpdateForm {...props} />
             }
           />
           <Route
@@ -38,7 +38,7 @@ class DataSource extends React.Component {
           />
         </Typography>
       </React.Fragment>
-    )
+    );
   }
 }
 export default withStyles(styles)(DataSource);

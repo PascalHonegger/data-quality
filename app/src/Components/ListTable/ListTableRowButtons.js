@@ -7,7 +7,7 @@ import { ListTableCell } from './ListTableCell';
 
 /**
  * Container component for TableRow Action Buttons
-
+ *
  * @param buttons a list of buttons
  * @param value an id of the row element
  * @param button.function a predefined button function (currently edit/delete).
@@ -15,37 +15,31 @@ import { ListTableCell } from './ListTableCell';
  *
  * Calls a Button component to render each button
  */
-export const ListTableRowButtons = ({ buttons, value }) => {
+export const ListTableRowButtons = ({ buttons, value }) => <ListTableCell
+  contents={
+    buttons.map((button) => _createButton(button, value)
+      , value)
+  }
+/>;
 
-  return (
-    <ListTableCell
-      contents={
-        buttons.map((button) => (
-            _createButton(button, value)
-        ), value)
-      }
-    />
-  )
-}
 
 function _createButton(button, value) {
-  switch(button.function) {
-    case 'edit':
-      return (
-          <IconButton key={'edit_' + value} component={Link} to={button.parameter + '/edit/' + value} aria-label="Delete" color="primary">
-            <EditIcon/>
-          </IconButton>
-      );
-    default:
-      return(
-        <IconButton key={'delete_' + value} onClick={() => _delete(button.parameter, value)} aria-label="Delete" color="primary">
-          <DeleteIcon/>
-        </IconButton>
-      );
+  switch (button.function) {
+  case 'edit':
+    return (
+      <IconButton key={`edit_${value}`} component={Link} to={`${button.parameter}/edit/${value}`} aria-label="Delete" color="primary">
+        <EditIcon/>
+      </IconButton>
+    );
+  default:
+    return (
+      <IconButton key={`delete_${value}`} onClick={() => _delete(button.parameter, value)} aria-label="Delete" color="primary">
+        <DeleteIcon/>
+      </IconButton>
+    );
   }
-
 }
 
 function _delete(repository, id) {
-  alert('Delete using ' + repository + ' having id ' + id);
+  alert(`Delete using ${repository} having id ${id}`);
 }

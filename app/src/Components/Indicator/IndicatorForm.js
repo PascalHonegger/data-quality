@@ -6,7 +6,7 @@ import SelectInput from './../FormInput/SelectInput';
 import SimpleButton from './../FormInput/SimpleButton';
 import SwitchInput from './../FormInput/SwitchInput';
 
-const IndicatorFormFields = props => {
+const IndicatorFormFields = (props) => {
   const {
     data,
     values,
@@ -15,10 +15,10 @@ const IndicatorFormFields = props => {
     handleChange,
     handleBlur,
     handleSubmit,
-    isSubmitting,
+    isSubmitting
   } = props;
   return (
-    <form onSubmit={handleSubmit} style={{ marginLeft: '60px' }}>
+    <form onSubmit={handleSubmit} style={{ 'marginLeft': '60px' }}>
       <div>
         <TextInput
           id="name"
@@ -30,7 +30,7 @@ const IndicatorFormFields = props => {
           value={values.name}
           onChange={handleChange}
           onBlur={handleBlur}
-          style={{ float: 'left' }}
+          style={{ 'float': 'left' }}
         />
       </div>
       <div>
@@ -56,7 +56,7 @@ const IndicatorFormFields = props => {
           value={values.indicatorTypeId}
           onChange={handleChange}
           onBlur={handleBlur}
-          style={{ float: 'left' }}
+          style={{ 'float': 'left' }}
         />
       </div>
       <div>
@@ -98,7 +98,7 @@ const IndicatorFormFields = props => {
       </div>
       <div>
         <div>
-          <SimpleButton type="submit" disabled={isSubmitting} label="Submit"  variant='contained'/> &nbsp;
+          <SimpleButton type="submit" disabled={isSubmitting} label="Submit" variant="contained"/> &nbsp;
         </div>
       </div>
     </form>
@@ -106,42 +106,43 @@ const IndicatorFormFields = props => {
 };
 
 const formikEnhancer = withFormik({
-  validationSchema: Yup.object().shape({
-    indicatorTypeId: Yup.number().integer()
-      .min(1, 'You need to select an indicator type')
-      .required('You need to select an indicator type'),
-    indicatorGroupId: Yup.number().integer()
-      .min(1, 'You need to select an indicator group')
-      .required('You need to select an indicator group'),
-    executionOrder: Yup.number().integer()
-      .min(0, 'Execution order has to be a non-negative integer')
-      .required('You need to input execution order.'),
-    name: Yup.string()
-      .required('Name cannot be blank'),
-    description: Yup.string()
-      .required('Description cannot be blank'),
+  'validationSchema': Yup.object().shape({
+    'indicatorTypeId': Yup.number().integer().
+      min(1, 'You need to select an indicator type').
+      required('You need to select an indicator type'),
+    'indicatorGroupId': Yup.number().integer().
+      min(1, 'You need to select an indicator group').
+      required('You need to select an indicator group'),
+    'executionOrder': Yup.number().integer().
+      min(0, 'Execution order has to be a non-negative integer').
+      required('You need to input execution order.'),
+    'name': Yup.string().
+      required('Name cannot be blank'),
+    'description': Yup.string().
+      required('Description cannot be blank')
   }),
 
-  mapPropsToValues: (props) => (
-    props.initialFieldValues === null
-      ? { name: '', description: '', executionOrder: 0, indicatorTypeId: 0, indicatorGroupId: 0, flagActive: false }
-      : { name: props.initialFieldValues.name, description: props.initialFieldValues.description,
-        executionOrder: props.initialFieldValues.executionOrder, indicatorTypeId: props.initialFieldValues.indicatorTypeId,
-        indicatorGroupId: props.initialFieldValues.indicatorGroupId, flagActive: props.initialFieldValues.flagActive }
-  ),
-  handleSubmit: (payload, { props, setSubmitting }) => {
+  'mapPropsToValues': (props) => props.initialFieldValues === null
+    ? { 'name': '', 'description': '', 'executionOrder': 0, 'indicatorTypeId': 0, 'indicatorGroupId': 0, 'flagActive': false }
+    : { 'name': props.initialFieldValues.name,
+      'description': props.initialFieldValues.description,
+      'executionOrder': props.initialFieldValues.executionOrder,
+      'indicatorTypeId': props.initialFieldValues.indicatorTypeId,
+      'indicatorGroupId': props.initialFieldValues.indicatorGroupId,
+      'flagActive': props.initialFieldValues.flagActive },
+  'handleSubmit': (payload, { props, setSubmitting }) => {
     setSubmitting(false);
     let variables;
     if (props.initialFieldValues === null) {
-        variables = { indicator: payload };
+      variables = { 'indicator': payload };
     } else {
-        variables = { indicatorPatch: payload, id: props.initialFieldValues.id };
+      variables = { 'indicatorPatch': payload, 'id': props.initialFieldValues.id };
     }
     props.mutate({
-      variables: variables
+      variables
     });
   },
-  displayName: 'IndicatorForm',
+  'displayName': 'IndicatorForm'
 });
 
 
